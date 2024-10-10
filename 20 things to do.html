@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Activity</title>
+    <script>
+        function randomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function askQuestion() {
+            var num1 = randomNumber(10, 99);
+            var num2 = randomNumber(10, 99);
+            var userAnswer = prompt("What is " + num1 + " - " + num2 + "?");
+            var correctAnswer = num1 - num2;
+
+            var things = [
+                "dance romantically", "karaoke", "learn biology", "learn chemistry", "learn physics", 
+                "read one subchapter of Jordan Peterson", "play board games", "play naughty games", 
+                "paint", "edit & make a short video", "do strip poker", "do deep talk", 
+                "read one scientific article", "learn engineering", "do toastmaster", 
+                "do speech", "discuss business", "do trivia games", "write love letters", 
+                "write poems", "do street photography", "cook together", "learn geography", 
+                "do fishing", "do video games"
+            ];
+
+            if (parseInt(userAnswer) === correctAnswer) {
+                alert("You're correct! The answer is " + correctAnswer);
+            } else {
+                var randomActivity = things[Math.floor(Math.random() * things.length)];
+                alert("Oow... since you failed, you have to do something insufferable with Tiara :)");
+                alert("The thing you are gonna do today is to " + randomActivity);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Random Activity Picker</h1>
+    <button onclick="askQuestion()">Start Game</button>
+</body>
+</html>
